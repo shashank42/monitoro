@@ -43,7 +43,13 @@ for(const key in obj){
         }
     }
 }
-return false
+    // Convert obj to string and search for the sval in the string
+    var objString = JSON.stringify(obj, null, 0)
+    if (objString.includes(sval)) {
+        return true;
+    }
+    
+    return false
 }
 
 module.exports = search
